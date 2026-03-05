@@ -1,0 +1,4 @@
+# Extra packages for Clawitzer ISO (append to base)
+# Node.js 22+ – add via NodeSource in scripts or here if using a PPA
+# nodejs
+# Optional: dependencies for Clawitzer Agent (see agent/ and docs/agent-strategy.md)

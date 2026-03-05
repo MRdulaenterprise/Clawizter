@@ -1,0 +1,16 @@
+[Unit]
+Description=Clawitzer Agent – unified OS agent (OpenClaw + Spacebot features)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /usr/lib/clawitzer/lib/daemon.js
+WorkingDirectory=/usr/lib/clawitzer
+Environment=NODE_ENV=production
+Environment=CLAWITZER_CONFIG_DIR=/etc/clawitzer
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

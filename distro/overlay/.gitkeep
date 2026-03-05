@@ -1,0 +1,5 @@
+# Overlay files are copied onto the live system:
+# - systemd unit: etc/systemd/system/clawitzer-agent.service
+# - config defaults: etc/clawitzer/
+# - launcher/desktop: usr/share/applications/clawitzer-agent.desktop
+# - theme/wallpaper: usr/share/clawitzer/

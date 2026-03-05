@@ -1,0 +1,5 @@
+Clawitzer theme assets:
+- Add wallpaper.png (or similar) for default desktop background.
+- Optional: Cinnamon theme or icon set in subdirs; reference from system defaults.
+
+First-run: users can launch "Set up Clawitzer Agent" from the menu to open the agent UI and configure API keys and channels.

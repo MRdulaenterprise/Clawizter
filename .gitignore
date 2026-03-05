@@ -1,0 +1,16 @@
+# Build
+_build/
+*.iso
+
+# Node
+node_modules/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Env / secrets
+.env
+*.pem

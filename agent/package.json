@@ -1,0 +1,19 @@
+{
+  "name": "clawitzer-agent",
+  "version": "0.1.0",
+  "description": "Clawitzer OS Agent – unified OpenClaw + Spacebot-inspired features",
+  "main": "lib/daemon.js",
+  "bin": {
+    "clawitzer-agent": "lib/daemon.js"
+  },
+  "scripts": {
+    "start": "node lib/daemon.js",
+    "postinstall": "node lib/check-openclaw.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "optionalDependencies": {
+    "openclaw": "latest"
+  }
+}
