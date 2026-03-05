@@ -1,23 +1,14 @@
 #!/usr/bin/env node
 /**
  * Clawitzer Agent – unified OS daemon (Option A: OpenClaw-based).
- * If openclaw is installed, delegate to it; otherwise run a minimal placeholder
- * that serves setup info and health.
+ * If openclaw is installed, run its gateway via CLI; otherwise run a minimal placeholder.
  */
 const http = require('http');
 const path = require('path');
+const { spawn } = require('child_process');
 
 const PORT = process.env.CLAWITZER_AGENT_PORT || 19898;
 const CONFIG_DIR = process.env.CLAWITZER_CONFIG_DIR || path.join(process.env.HOME || '/root', '.config/clawitzer');
-
-function tryOpenClaw() {
-  try {
-    require.resolve('openclaw');
-    return require('openclaw');
-  } catch {
-    return null;
-  }
-}
 
 function startPlaceholder() {
   const server = http.createServer((req, res) => {
@@ -40,12 +31,28 @@ function startPlaceholder() {
   });
 }
 
-const openclaw = tryOpenClaw();
-if (openclaw && typeof openclaw.run === 'function') {
-  openclaw.run().catch((err) => {
-    console.error('OpenClaw failed, falling back to placeholder:', err.message);
+function tryRunOpenClaw() {
+  const openclawPath = path.join(__dirname, '..', 'node_modules', '.bin', 'openclaw');
+  const fs = require('fs');
+  if (!fs.existsSync(openclawPath)) return false;
+  const child = spawn(process.execPath, [openclawPath, 'gateway', 'run', '--port', String(PORT)], {
+    cwd: path.join(__dirname, '..'),
+    stdio: 'inherit',
+    env: { ...process.env, CLAWITZER_CONFIG_DIR: CONFIG_DIR },
+  });
+  child.on('error', (err) => {
+    console.error('OpenClaw failed:', err.message);
     startPlaceholder();
   });
-} else {
+  child.on('exit', (code) => {
+    if (code !== 0 && code !== null) {
+      console.error('OpenClaw exited with code', code, '- falling back to placeholder');
+      startPlaceholder();
+    }
+  });
+  return true;
+}
+
+if (!tryRunOpenClaw()) {
   startPlaceholder();
 }

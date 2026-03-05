@@ -20,10 +20,17 @@ A full installable Linux distribution (bootable ISO) based on Ubuntu/Linux Mint,
 
 ## Quick start
 
+**Terminal guide (copy-paste steps):** run this in the repo for a step-by-step in the terminal:
+
+```bash
+./scripts/clawitzer-guide.sh
+```
+
 - [Design and base choices](docs/DESIGN.md)
 - [Agent strategy](docs/agent-strategy.md)
 - [Building the ISO](docs/BUILD.md)
 - [Testing in the cloud](docs/TEST-CLOUD.md)
+- [DigitalOcean setup (step-by-step)](docs/DIGITALOCEAN-SETUP.md) – create a Droplet and run the Clawitzer Agent
 
 ## Building the ISO
 
