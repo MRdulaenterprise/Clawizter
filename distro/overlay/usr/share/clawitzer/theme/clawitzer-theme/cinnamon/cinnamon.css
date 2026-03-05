@@ -1,0 +1,16 @@
+/* Clawitzer – minimal Cinnamon theme (accent colors) */
+/* Base: inherits from cinnamon (Mint). Override only accents. */
+
+/* Panel and calendar */
+.panel-corner,
+.calendar-events-main-frame {
+    background-gradient-direction: vertical;
+    background-gradient-start: #0d9488;
+    background-gradient-end: #0f766e;
+}
+
+/* Selected item accent */
+.nemo-desktop.nemo-canvas-item:selected,
+.menu-selected-app-box {
+    background-color: rgba(13, 148, 136, 0.4);
+}

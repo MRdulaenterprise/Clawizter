@@ -1,0 +1,7 @@
+/* Clawitzer accent colors – use in Cinnamon/GTK theme or panels */
+/* Teal primary */
+@define-color clawitzer-teal #0d9488;
+@define-color clawitzer-teal-dark #0f766e;
+/* Navy */
+@define-color clawitzer-navy #0c4a6e;
+@define-color clawitzer-navy-light #0e7490;

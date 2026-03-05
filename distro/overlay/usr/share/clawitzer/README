@@ -1,5 +1,6 @@
 Clawitzer theme assets:
-- Add wallpaper.png (or similar) for default desktop background.
-- Optional: Cinnamon theme or icon set in subdirs; reference from system defaults.
+- wallpaper.svg – default desktop (4K Clawizter artwork; source: Clawizter.svg). Set via System Settings → Backgrounds or run set-default-wallpaper.sh.
+- clawitzer-colors.css – accent colors (teal, navy) for themes.
+- theme/clawitzer-theme/ – optional Cinnamon accent overrides (panel/calendar).
 
 First-run: users can launch "Set up Clawitzer Agent" from the menu to open the agent UI and configure API keys and channels.
