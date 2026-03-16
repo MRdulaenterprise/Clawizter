@@ -1,9 +1,0 @@
-Clawitzer theme
-==============
-
-Wallpaper: wallpaper.svg (teal → navy gradient with soft waves).
-Use as default in Cinnamon: System Settings → Backgrounds, or set via
-/etc/dconf/db/local.d/ or the live system's default config.
-
-Colors (clawitzer-colors.css): teal #0d9488, navy #0c4a6e.
-theme/clawitzer-theme/cinnamon/ – optional Cinnamon accent overrides.
